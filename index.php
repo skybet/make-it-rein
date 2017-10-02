@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            
+            <br>
             <input type="text" name="email" placeholder="Enter your email">
             <input type="submit" value="Submit Predictions">
         </form>
