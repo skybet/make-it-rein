@@ -10,9 +10,13 @@ include __DIR__.'/../db.php';
 
   $us = new UserFactory($pdo);
 
-  $u = new User('hjfehi@nfijwhc.com');
-  var_dump($u);
+  $u = new User('hhhhh@nfijwhc.com');
+  //var_dump($u);
 
   $us->save($u);
+
+  $userIdTrial =$us->byEmail($u);
+
+  //echo $userIdTrial;
 
  ?>
