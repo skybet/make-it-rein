@@ -1,5 +1,5 @@
 <?php include('init.php');
-  //$db = getDB();
+  $db = getDB();
  ?>
 <!DOCTYPE html>
 <html lang="en">
