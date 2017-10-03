@@ -29,9 +29,9 @@
         var_dump($race1);
     ?>
     <div class="container contentBanner">
-        
+
         <h1 class="txt-ctr marb-50">
-            Race Day 1 
+            Race Day 1
         </h1>
         <form class="txt-ctr">
             <div class="race1">
@@ -95,7 +95,6 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-
             <div class="race3">
                 <h3> Race 3 - Newmarket 17:20</h3>
                 <div>
