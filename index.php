@@ -1,3 +1,8 @@
+<?php include('init.php');
+
+  $db = getDB();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +18,12 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
+    <?php include_once('db.php'); ?>
+    <?php include_once('classes/HorseFactory.php') ?>
+    <?php include_once('classes/HorseRace.php') ?>
     <div class="container contentBanner">
         <h1>
-            Race Day 1 
+            Race Day 1
         </h1>
         <form>
             <div class="race1">
@@ -47,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="race2">
                 <h3> Race 2 - York 14:50</h3>
                 <div>
@@ -77,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="race3">
                 <h3> Race 3 - Newmarket 17:20</h3>
                 <div>
