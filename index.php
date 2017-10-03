@@ -13,6 +13,9 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
+    <?php include_once('db.php'); ?>
+    <?php include_once('classes/HorseFactory.php') ?>
+    <?php include_once('classes/HorseRace.php') ?>
     <div class="container contentBanner">
         <h1>
             Race Day 1 
