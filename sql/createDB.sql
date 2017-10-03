@@ -41,7 +41,9 @@ create table HorseRaceLink(
 create table Prediction(
     PredictionId  int(11) not null AUTO_INCREMENT,
     HorseRaceLinkId  int(11) not null,
+    UserId int(11) not null,
     Position  int(11) not null,
     PRIMARY KEY ( PredictionId ),
-    FOREIGN KEY ( HorseRaceLinkId ) REFERENCES HorseRaceLink( HorseRaceLinkId )
+    FOREIGN KEY ( HorseRaceLinkId ) REFERENCES HorseRaceLink( HorseRaceLinkId ),
+    FOREIGN KEY ( UserId ) REFERENCES User( UserId )
 );
