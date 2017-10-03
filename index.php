@@ -1,6 +1,3 @@
-<?php include('init.php');
-  //$db = getDB();
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,18 +13,7 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
-    <?php include_once('db.php'); ?>
-    <?php include_once('classes/HorseFactory.php') ?>
-    <?php include_once('classes/HorseRace.php') ?>
-    <?php 
-        $db = get_db();
-        $horseFactory = new HorseFactory($db);
-        $race1 = $horseFactory->getRaceHorses(1);
-        $race2 = $horseFactory->getRaceHorses(2);
-        $race3 = $horseFactory->getRaceHorses(3);
-
-        var_dump($race1);
-    ?>
+    
     <div class="container contentBanner">
 
         <h1 class="txt-ctr marb-50">
@@ -64,7 +50,6 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-
             <div class="race2">
                 <h3> Race 2 - York 14:50</h3>
                 <div>
