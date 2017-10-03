@@ -25,6 +25,13 @@ class UserFactory {
   }
 
 
+
+
+  // if ($uf->byEmail(emailfromfrontend)) {
+  //   $msg = "username already in use"
+  //   <span><?php echo $msg; 
+
+
   public function save(User $user){
     $r = $this->db->prepare("
         insert into User (Email)

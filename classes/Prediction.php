@@ -20,6 +20,12 @@
       $this->placePrediction = $a['Position'];
     }
 
+
+    public function setId($id){
+      $this->id = $id;
+    }
+
+
   }
 
 
