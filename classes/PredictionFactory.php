@@ -15,9 +15,9 @@ class PredictionFactory {
         values (:HorseRaceLinkId, :UserId, :Position)
     ");
     $worked = $r->execute(
-      ['HorseRaceLinkId' => $prediction->hrLinkId]
-      ['UserId' => $prediction->userId]
-      ['Position' => $prediction->placePrediction]
+      ['HorseRaceLinkId' => $prediction->hrLinkId,
+      'UserId' => $prediction->userId,
+      'Position' => $prediction->placePrediction]
     );
     if (!$worked) {
       return false;
