@@ -54,11 +54,8 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="clearfix"></div>
-=======
 
->>>>>>> master
             <div class="race2">
                 <h3> Race 2 - York 14:50</h3>
                 <div>
@@ -88,11 +85,8 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="clearfix"></div>
-=======
 
->>>>>>> master
             <div class="race3">
                 <h3> Race 3 - Newmarket 17:20</h3>
                 <div>
