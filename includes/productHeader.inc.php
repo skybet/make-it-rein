@@ -10,10 +10,6 @@
                 <img class="product-image" src="img/products/super6.png">
             </a>
 
-            <a rel="external" class="product-item" href="http://www.sportinglife.com/?AFF_ID=1197315468&dcmp=pick7_nav_tn82">
-                <img class="product-image" src="img/products/sportinglife.png">
-            </a>
-
             <a rel="external" class="product-item" data-app-name="SkyFF" data-app-link="https://fantasyfootball.skysports.com?dcmp=s6_nav-tn82" href="https://fantasyfootball.skysports.com?dcmp=s6_nav-tn82">
                 <img class="product-image-large" src="img/products/fantasyfootball.png">
             </a>
