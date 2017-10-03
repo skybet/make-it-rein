@@ -14,32 +14,32 @@
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
     <div class="container contentBanner">
-        <h1>
+        <h1 class="txt-ctr marb-50">
             Race Day 1 
         </h1>
-        <form>
+        <form class="txt-ctr">
             <div class="race1">
                 <h3> Race 1 - Ascot 13:50</h3>
                 <div>
-                    <div style="display: flex">
-                        <span > Your selection :</span>
-                        <select name="first">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 1st: </span>
+                        <select name="race1first" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
                         </select>
                     </div>
-                    <div>
-                        <span > Your selection :</span>
-                        <select name="second">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 2nd:</span>
+                        <select name="race1second" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
                         </select>
                     </div>
-                    <div>
-                        <span > Your selection :</span>
-                        <select name="third">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 3rd:</span>
+                        <select name="race1third" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
@@ -47,29 +47,29 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="clearfix"></div>
             <div class="race2">
                 <h3> Race 2 - York 14:50</h3>
                 <div>
-                    <div>
-                        <span > Your selection :</span>
-                        <select name="first">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 1st:</span>
+                        <select name="race2first" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
                         </select>
                     </div>
-                    <div>
-                        <span > Your selection :</span>
-                        <select name="second">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 2nd:</span>
+                        <select name="race2second" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
                         </select>
                     </div>
-                    <div>
-                        <span > Your selection :</span>
-                        <select name="third">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 3rd:</span>
+                        <select name="race2third" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
@@ -77,29 +77,29 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="clearfix"></div>
             <div class="race3">
                 <h3> Race 3 - Newmarket 17:20</h3>
                 <div>
-                    <div>
-                        <span > Your selection :</span>
-                        <select name="first">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 1st:</span>
+                        <select name="race3first" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
                         </select>
                     </div>
-                    <div>
-                        <span > Your selection :</span>
-                        <select name="second">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 2nd:</span>
+                        <select name="race3second" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
                         </select>
                     </div>
-                    <div>
-                        <span > Your selection :</span>
-                        <select name="third">
+                    <div class="w-30p fl-left pad-10">
+                        <span > 3rd:</span>
+                        <select name="race3third" class="cl-black">
                             <option value="option1">Horse 1</option>
                             <option value="option2">Horse 2</option>
                             <option value="option3">Horse 3</option>
@@ -107,9 +107,11 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <input type="text" name="email" placeholder="Enter your email">
-            <input type="submit" value="Submit Predictions">
+            <div class="clearfix"></div>
+            <div class="padt-50 ">
+                <input type="email" name="email" placeholder="Enter your email" class="bord-rd cl-black pad-10 h-34">
+                <input type="submit" value="Submit Predictions" class="cl-white btn btn-success">
+            </div>
         </form>
     </div>
 
