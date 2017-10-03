@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Make it Rein</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Make it Rein</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/rein.css"/>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
+    <?php include_once('includes/productHeader.inc.php'); ?>
+    <?php include_once('includes/navBar.inc.php'); ?>
+    <div class="container contentBanner">
         <h1>
             Race Day 1 
         </h1>
