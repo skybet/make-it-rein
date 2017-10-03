@@ -1,6 +1,6 @@
 <?php
 
-class usersFactory {
+class UserFactory {
   private $db;
 
 

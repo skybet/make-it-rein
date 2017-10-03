@@ -1,7 +1,7 @@
 <?php
-class users {
-  private $id;
-  private $email;
+class User {
+  public $id;
+  public $email;
 
 
   public function __construct($email = null){
@@ -10,7 +10,7 @@ class users {
   }
 
   public function fromArray(array $a){
-    $this->id = $a["Id"];
+    $this->id = $a["UserId"];
     $this->email = $a["Email"];
   }
 
