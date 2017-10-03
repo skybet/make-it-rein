@@ -21,6 +21,9 @@ class UserFactory {
     if (!$row){
         return null;
     }
+
+      echo "HERRRRRREEEE";
+      var_dump($row);
       return $row;
   }
 
@@ -29,7 +32,7 @@ class UserFactory {
 
   // if ($uf->byEmail(emailfromfrontend)) {
   //   $msg = "username already in use"
-  //   <span><?php echo $msg; 
+  //   <span><?php echo $msg;
 
 
   public function save(User $user){
