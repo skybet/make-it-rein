@@ -1,3 +1,9 @@
+
+<?php include('init.php');
+
+  $db = getDB();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
