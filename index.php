@@ -1,3 +1,6 @@
+<?php include('init.php');
+  //$db = getDB();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,11 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
+    <?php include_once('db.php'); ?>
+    <?php include_once('classes/HorseFactory.php') ?>
+    <?php include_once('classes/HorseRace.php') ?>
     <div class="container contentBanner">
+        
         <h1 class="txt-ctr marb-50">
             Race Day 1 
         </h1>
@@ -47,7 +54,11 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="clearfix"></div>
+=======
+
+>>>>>>> master
             <div class="race2">
                 <h3> Race 2 - York 14:50</h3>
                 <div>
@@ -77,7 +88,11 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="clearfix"></div>
+=======
+
+>>>>>>> master
             <div class="race3">
                 <h3> Race 3 - Newmarket 17:20</h3>
                 <div>
