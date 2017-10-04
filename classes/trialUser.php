@@ -15,7 +15,7 @@ require '../init.php';
 
   $us->save($u);
 
-  $userIdTrial =$us->byEmail($u);
+  $userIdTrial =$us->byEmail($u->email);
 
   //echo $userIdTrial;
 
