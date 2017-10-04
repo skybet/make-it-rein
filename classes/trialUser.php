@@ -4,6 +4,8 @@
 require '../init.php';
 include __DIR__.'/../db.php';
 
+$roundId = 4;
+
   $pdo = get_db();
 
 
@@ -16,6 +18,16 @@ include __DIR__.'/../db.php';
   $us->save($u);
 
   $userIdTrial =$us->byEmail($u->email);
+
+  $rf = new RaceFactory($pdo);
+
+
+  $r = new Race($roundId);
+
+
+  $findRaceFromRound = $rf->byRoundId($r->roundId);
+  //echo "findRaceFromRound hereeeeee";
+//  var_dump($findRaceFromRound);
 
   //echo $userIdTrial;
 
