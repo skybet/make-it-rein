@@ -1,20 +1,18 @@
 <?php
 spl_autoload_register(function ($className){
-  require '../classes/'. $className .'.php';
+  require __DIR__.'//classes/'. $className .'.php';
 });
 
 
 
 function getDB(){
-  $server = "us-cdbr-iron-east-05.cleardb.net";
-  $username = "be96888e962a31";
-  $password = "fb38c167";
-  $db = "heroku_5ad703004cc7d35";
-
-  $conn = new mysqli($server, $username, $password, $db);
-
-
-  return $conn;
+  $host ='127.0.0.1';
+  $db = 'MakeItRein';
+  $userdb = 'user1';
+  $pass = 'mypass';
+ $dsn = "mysql:host=$host; dbname=$db";
+  $pdo = new PDO($dsn, $userdb, $pass);
+  return $pdo;
 }
 
 
