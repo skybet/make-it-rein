@@ -42,7 +42,7 @@
         $race3 = $hf->getRaceHorses(3);
     ?>
     <div class="container contentBanner">
-        <div class="" style="margin:20%">
+        <div class="mart-10p">
             <h1 class="txt-ctr">Check Your Results</h1>
             <form method="post" class="txt-ctr" action="calcResults.php">
               <input type="email" name="email" placeholder="Enter your email" class="bord-rd cl-black pad-10 h-34">
