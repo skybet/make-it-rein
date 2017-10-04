@@ -13,109 +13,148 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
-    
+    <?php include_once('db.php'); ?>
+    <?php include_once('classes/HorseFactory.php'); ?>
+    <?php include_once('classes/HorseRace.php'); ?>
+    <?php 
+        $db = get_db();
+        $hf = new HorseFactory($db);
+        $race1 = $hf->getRaceHorses(1);
+        $race2 = $hf->getRaceHorses(2);
+        $race3 = $hf->getRaceHorses(3);
+    ?>
     <div class="container contentBanner">
-
-        <h1 class="txt-ctr marb-50">
-            Race Day 1
-        </h1>
-        <form class="txt-ctr">
-            <div class="race1">
-                <h3> Race 1 - Ascot 13:50</h3>
-                <div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 1st: </span>
-                        <select name="race1first" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
-                    </div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 2nd:</span>
-                        <select name="race1second" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
-                    </div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 3rd:</span>
-                        <select name="race1third" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="race2">
-                <h3> Race 2 - York 14:50</h3>
-                <div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 1st:</span>
-                        <select name="race2first" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
-                    </div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 2nd:</span>
-                        <select name="race2second" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
-                    </div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 3rd:</span>
-                        <select name="race2third" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
+        <div class="">
+            <h1 class="txt-ctr">
+                Race Day 1
+            </h1>
+            <form method="post" class="txt-ctr" action="sendData.php">
+                <div class="race1">
+                    <h3 class="txt-left"> Race 1 - Ascot 13:50</h3>
+                    <div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 1st: </span>
+                            <select name="race1first" class="cl-black">
+                            <?php
+                                foreach($race1 as $horse){
+                                    echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                                }
+                            ?>
+                            </select>
+                        </div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 2nd:</span>
+                            <select name="race1second" class="cl-black">
+                            <?php
+                            foreach($race1 as $horse){
+                                echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                            }
+                        ?>
+                            </select>
+                        </div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 3rd:</span>
+                            <select name="race1third" class="cl-black">
+                            <?php
+                            foreach($race1 as $horse){
+                                echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                            }
+                        ?>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="race3">
-                <h3> Race 3 - Newmarket 17:20</h3>
-                <div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 1st:</span>
-                        <select name="race3first" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
-                    </div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 2nd:</span>
-                        <select name="race3second" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
-                    </div>
-                    <div class="w-30p fl-left pad-10">
-                        <span > 3rd:</span>
-                        <select name="race3third" class="cl-black">
-                            <option value="option1">Horse 1</option>
-                            <option value="option2">Horse 2</option>
-                            <option value="option3">Horse 3</option>
-                        </select>
+                <div class="clearfix"></div>
+                <div class="race2">
+                    <h3 class="txt-left"> Race 2 - York 14:50</h3>
+                    <div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 1st:</span>
+                            <select name="race2first" class="cl-black">
+                            <?php
+                            foreach($race2 as $horse){
+                                echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                            }
+                        ?>
+                            </select>
+                        </div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 2nd:</span>
+                            <select name="race2second" class="cl-black">
+                            <?php
+                            foreach($race2 as $horse){
+                                echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                            }
+                        ?>
+                            </select>
+                        </div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 3rd:</span>
+                            <select name="race2third" class="cl-black">
+                            <?php
+                                foreach($race2 as $horse){
+                                    echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                                }
+                            ?>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="padt-50 ">
-                <input type="email" name="email" placeholder="Enter your email" class="bord-rd cl-black pad-10 h-34">
-                <input type="submit" value="Submit Predictions" class="cl-white btn btn-success">
-            </div>
-        </form>
+                <div class="clearfix"></div>
+                <div class="race3">
+                    <h3 class="txt-left"> Race 3 - Newmarket 17:20</h3>
+                    <div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 1st:</span>
+                            <select name="race3first" class="cl-black">
+                            <?php
+                            foreach($race3 as $horse){
+                                echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                            }
+                        ?>
+                            </select>
+                        </div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 2nd:</span>
+                            <select name="race3second" class="cl-black">
+                            <?php
+                            foreach($race3 as $horse){
+                                echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                            }
+                        ?>
+                            </select>
+                        </div>
+                        <div class="w-33p fl-left pad-10">
+                        <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
+                            <span > 3rd:</span>
+                            <select name="race3third" class="cl-black">
+                            <?php
+                            foreach($race3 as $horse){
+                                echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
+                            }
+                        ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="padt-50 ">
+                    <input type="email" name="email" placeholder="Enter your email" class="bord-rd cl-black pad-10 h-34">
+                    <input type="submit" value="Submit Predictions" class="cl-white btn btn-success">
+                </div>
+            </form>
+        </div>
     </div>
+
+    <?php include_once('includes/footer.inc.php'); ?>
 
 </body>
     <script src=""></script>

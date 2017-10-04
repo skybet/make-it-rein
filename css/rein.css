@@ -36,6 +36,10 @@ body {
     width: 25%;
 }
 
+.w-33p {
+    width: 33%;
+}
+
 .w-30p {
     width: 30%;
 }
@@ -331,7 +335,6 @@ body {
 .contentBanner {
     background-image: url('../img/contentBanner.jpg');
     background-size: 1140px;
-    height: 750px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -359,5 +362,5 @@ footer hr {
     border: 0;
     border-top: 0px solid;
     padding: 0;
-    background: yellow;
+    background: white;
 }
