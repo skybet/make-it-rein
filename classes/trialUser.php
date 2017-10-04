@@ -15,7 +15,7 @@ include __DIR__.'/../db.php';
 
   $us->save($u);
 
-  $userIdTrial =$us->byEmail($u);
+  $userIdTrial =$us->byEmail($u->email);
 
   //echo $userIdTrial;
 
