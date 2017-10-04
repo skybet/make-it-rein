@@ -1,6 +1,6 @@
 <?php
 spl_autoload_register(function ($className){
-  require '../classes/'. $className .'.php';
+  require __DIR__.'//classes/'. $className .'.php';
 });
 
 
