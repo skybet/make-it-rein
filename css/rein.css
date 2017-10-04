@@ -97,6 +97,10 @@ body {
     margin-top: 10px;
 }
 
+.mart-10p {
+    margin-top: 10%;
+}
+
 .mart-28 {
     margin-top: 28px;
 }
@@ -338,6 +342,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: auto;
+    min-height: 600px;
 }
 
 
