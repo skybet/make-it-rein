@@ -1,5 +1,7 @@
 <?php
 
+//comment
+
 class RaceFactory {
   private $db;
 
