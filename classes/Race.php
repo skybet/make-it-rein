@@ -6,7 +6,7 @@ class Race{
 
   public function __construct($roundId=null)
     {
-      $this->roundId = $roundId
+      $this->roundId = $roundId;
     }
 
 
