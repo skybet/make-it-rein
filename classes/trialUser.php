@@ -2,9 +2,9 @@
 
 
 require '../init.php';
-//include __DIR__.'/../db.php';
+include __DIR__.'/../db.php';
 
-  $pdo = getDB();
+  $pdo = get_db();
 
 
 
