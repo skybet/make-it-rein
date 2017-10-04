@@ -6,9 +6,7 @@ $pdo = get_db();
 
 $races = [1,2,3];
 
-
-
- ?>
+?>
 
  <!DOCTYPE html>
  <html>
@@ -33,7 +31,6 @@ $races = [1,2,3];
                 echo "</select>";
               }
               echo "<br>";
-
           }
       ?>
       <input type="submit" value="Submit">
