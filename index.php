@@ -19,9 +19,9 @@
     <?php
         $db = get_db();
         $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(1201);
-        $race2 = $hf->getRaceHorses(1211);
-        $race3 = $hf->getRaceHorses(1221);
+        $race1 = $hf->getRaceHorses(1);
+        $race2 = $hf->getRaceHorses(2);
+        $race3 = $hf->getRaceHorses(3);
     ?>
     <div class="container contentBanner">
         <div class="">
