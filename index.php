@@ -16,12 +16,12 @@
     <?php include_once('db.php'); ?>
     <?php include_once('classes/HorseFactory.php'); ?>
     <?php include_once('classes/HorseRace.php'); ?>
-    <?php 
+    <?php
         $db = get_db();
         $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(1);
-        $race2 = $hf->getRaceHorses(2);
-        $race3 = $hf->getRaceHorses(3);
+        $race1 = $hf->getRaceHorses(1201);
+        $race2 = $hf->getRaceHorses(1211);
+        $race3 = $hf->getRaceHorses(1221);
     ?>
     <div class="container contentBanner">
         <div class="">

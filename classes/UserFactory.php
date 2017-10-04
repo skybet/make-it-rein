@@ -23,7 +23,8 @@ class UserFactory {
     }
 
       echo "HERRRRRREEEE";
-      var_dump($row);
+      echo PHP_EOL;
+      // var_dump($row);
       return $row;
   }
 
