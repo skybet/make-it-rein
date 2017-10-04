@@ -7,14 +7,12 @@
   </head>
   <body>
     <h1>Add Horse to Database</h1>
-    <form action="/action_page.php">
+    <form action="/addHorse.php">
       Horse Name: <input  type="text" name="HorseName" value="" id="x">
 
       <button type="button" onclick=addHorseToArray()>+</button>
       <ul id="list">
       </ul>
-      <br>
-      <br>
       <br>
       <input type="submit" value="Submit">
     </form>
