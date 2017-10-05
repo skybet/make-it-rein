@@ -1,21 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-
-    <form action="calcResults.php" method="post">
-
-      <input type="email" name="email">
-      <input type="submit">
-
-    </form>
-
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,23 +13,19 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
-    <?php include_once('db.php'); ?>
-    <?php include_once('classes/HorseFactory.php'); ?>
-    <?php include_once('classes/HorseRace.php'); ?>
-    <?php
-        $db = get_db();
-        $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(1);
-        $race2 = $hf->getRaceHorses(2);
-        $race3 = $hf->getRaceHorses(3);
-    ?>
+
     <div class="container contentBanner">
         <div class="mart-10p">
-            <h1 class="txt-ctr">Check Your Results</h1>
-            <form method="post" class="txt-ctr" action="calcResults.php">
-              <input type="email" name="email" placeholder="Enter your email" class="bord-rd cl-black pad-10 h-34" required>
+            <div class="txt-ctr">
+                <h1>Your prediction has been successfully saved!</h1>
+                <h3>The winner will be contacted by the email address provided.<br>Good luck with your prediction</h3>
+                <i class="fa fa-check fa-5x cl-success" aria-hidden="true"></i>
+            </div>
+
+            <!-- <form method="post" class="txt-ctr" action="calcResults.php">
+              <input type="email" name="email" placeholder="Enter your email" class="bord-rd cl-black pad-10 h-34">
               <input type="submit" value="Check my Predictions" class="cl-white btn btn-success">
-            </form>
+            </form> -->
         </div>
     </div>
 

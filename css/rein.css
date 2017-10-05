@@ -49,6 +49,10 @@ body {
     width: 50%;
 }
 
+.txt-underline {
+    text-decoration: underline;
+}
+
 .txt-ctr {
     text-align: center;
 }
@@ -67,6 +71,14 @@ body {
 
 .cl-black {
     color: black;
+}
+
+.cl-success {
+    color: #5cb85c;
+}
+
+.cl-warning {
+    color: #e13443;
 }
 
 .cl-gold {

@@ -32,11 +32,11 @@ function checkUserRound($db, $predArray, $race1first, $userId)
         writeUserPrediction($predArray, $db);
 
         $textForReturn = "prediction written to db";
-        header('Location: success.php');
+        header('Location: ../success.php');
         return $textForReturn;
     } else {
         $textForReturn = "You have already predicted on this round";
-        header('Location: fail.php');
+        header('Location: ../fail.php');
         return $textForReturn;
     }
 };

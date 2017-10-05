@@ -22,6 +22,7 @@
 
         $rfactory=new RoundFactory($db);
         $currentId = $rfactory->getCurrentRound();
+        //$currentId = 1;
         //echo $currentId;
         //
         $hf = new HorseFactory($db);
