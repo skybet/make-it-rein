@@ -52,7 +52,7 @@ else{
     $content = new SendGrid\Content("text/html", "<h1> Your bet has been placed!</h1><h3> Good Luck!</h3>");
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-    $apiKey = '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';
+    $apiKey = $apiKey = getenv('SENDGRID_API_KEY');
 
     $sg = new \SendGrid($apiKey);
 
