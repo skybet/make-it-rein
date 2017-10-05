@@ -26,6 +26,14 @@ $roundId = 4;
 
 
   $findRaceFromRound = $rf->byRoundId($r->roundId);
+
+  $rfactory=new RoundFactory($pdo);
+
+  //$rounds= new Round();
+
+  $trial = $rfactory->getCurrentRound();
+  echo "THIS IS THE TRIAL  ".$trial;
+
   //echo "findRaceFromRound hereeeeee";
 //  var_dump($findRaceFromRound);
 

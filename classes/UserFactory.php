@@ -26,9 +26,7 @@ class UserFactory
         return $row;
     }
 
-    // if ($uf->byEmail(emailfromfrontend)) {
-    //   $msg = "username already in use"
-    //   <span><?php echo $msg;
+
 
     public function save(User $user)
     {
