@@ -46,10 +46,8 @@ class RoundFactory {
       if (!$row){
           return null;
       }
-
-        echo $row[0][0]. "TEST 22";
-
-        return $row;
+      $row1 = $row[0][0];
+        return $row1;
     }
 
 }

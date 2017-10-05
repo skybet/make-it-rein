@@ -15,18 +15,25 @@
     <?php include_once('includes/navBar.inc.php'); ?>
     <?php include_once('db.php'); ?>
     <?php include_once('classes/HorseFactory.php'); ?>
+    <?php include_once('classes/RoundFactory.php'); ?>
     <?php include_once('classes/HorseRace.php'); ?>
     <?php
         $db = get_db();
+
+        $rfactory=new RoundFactory($db);
+        $currentId = $rfactory->getCurrentRound();
+        //echo $currentId;
+        //
         $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(1);
-        $race2 = $hf->getRaceHorses(2);
-        $race3 = $hf->getRaceHorses(3);
+        $race1 = $hf->getRaceHorses(1,$currentId);
+        $race2 = $hf->getRaceHorses(2,$currentId);
+        $race3 = $hf->getRaceHorses(3,$currentId);
+        //
     ?>
     <div class="container contentBanner">
         <div class="">
             <h1 class="txt-ctr marb-0">
-                Race Day 1
+                Race Day <?php echo $currentId ?>
             </h1>
             <form method="post" class="txt-ctr" action="sendData.php">
                 <div class="race1">
