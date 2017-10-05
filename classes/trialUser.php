@@ -32,7 +32,10 @@ $roundId = 4;
   //$rounds= new Round();
 
   $trial = $rfactory->getCurrentRound();
+  $theDate = $rfactory->getStartDate($trial);
   echo "THIS IS THE TRIAL  ".$trial;
+
+  echo "The start date is........".$theDate;
 
   //echo "findRaceFromRound hereeeeee";
 //  var_dump($findRaceFromRound);
