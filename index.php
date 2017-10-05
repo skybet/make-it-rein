@@ -25,12 +25,12 @@
     ?>
     <div class="container contentBanner">
         <div class="">
-            <h1 class="txt-ctr">
+            <h1 class="txt-ctr marb-0">
                 Race Day 1
             </h1>
             <form method="post" class="txt-ctr" action="sendData.php">
                 <div class="race1">
-                    <h3 class="txt-left"> Race 1 - Ascot 13:50</h3>
+                    <h3 class="txt-left marb-0"> Race 1 - Ascot 13:50</h3>
                     <div>
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="race2">
-                    <h3 class="txt-left"> Race 2 - York 14:50</h3>
+                    <h3 class="txt-left marb-0"> Race 2 - York 14:50</h3>
                     <div>
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="race3">
-                    <h3 class="txt-left"> Race 3 - Newmarket 17:20</h3>
+                    <h3 class="txt-left marb-0"> Race 3 - Newmarket 17:20</h3>
                     <div>
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
