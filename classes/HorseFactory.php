@@ -1,12 +1,14 @@
 <?php
 
+include("Horse.php");
+
 class HorseFactory{
     
     public function __construct(PDO $db){
         $this->db = $db;
     }
 
-    public function getRaceHorses($raceId, $roundId = 1){ //for MVP this is set to the 1st round
+    public function getRaceHorses($raceId, $roundId){ //for MVP this is set to the 1st round
         $q = $this->db->prepare("
             SELECT 
                 Horse.HorseId as HorseId,
@@ -44,7 +46,17 @@ class HorseFactory{
 
         return $raceHorseArray;
     }
-    
+
+    public function getAllHorses(){
+        $r = $this->db->query("select * from horse");
+        $horses = [];
+        foreach($r as $row){
+            $horse = new Horse($row["HorseId"], $row["HorseName"]); 
+            array_push($horses, $horse);    
+        }
+        return $horses;
+    }
+
 }
 
 

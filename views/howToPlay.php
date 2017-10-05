@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Terms and Conditions</title>
+    <title>How to Play</title>
     <title>Make it Rein</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
 
     <div class="container">
       <div>
-            <!-- Terms and conditions  -->
+            <!-- How to Play  -->
             <h2 class ="txt-ctr">Terms and Conditions</h2>
 
 
@@ -27,7 +27,7 @@
             <ol>
                 <li>This Competition is open to persons aged 18 years or over residing in the UK, Isle of Man, Channel Islands and Republic of Ireland. Proof of age and identity may be required. Entry to the Competition is free.</li>
                 <li>Employees of Hestview Limited and Infinity Works Consulting directly involved in the operation of the Competition are not eligible to win prizes.</li>
-                <li>In order to enter the Competition players are required to enter their email address upon making their selections. Only one entry per round is allowed per person. Multiple entries will be disqualified. If the Promoter has reasonable grounds to believe that multiple entries have been made by the same person, all entries by such player and/or email addresses will be disqualified from participating in the Competition or receiving any prizes. Players are required to enter using their own email address and any player found to be entering using the email address of any other person will be disqualified.</li>
+                <li>In order to enter the Competition players are required to enter their email address upon making their selections. Only one entry per week is allowed per person. Multiple entries will be disqualified. If the Promoter has reasonable grounds to believe that multiple entries have been made by the same person, all entries by such player and/or email addresses will be disqualified from participating in the Competition or receiving any prizes. Players are required to enter using their own email address and any player found to be entering using the email address of any other person will be disqualified.</li>
                 <li>Players will be deemed to have accepted these terms and conditions and agreed to be bound by them when entering this Competition. These terms and conditions will apply for the duration of the Competition.</li>
                 <li>In addition to the use specified above, the Promoter (Hestview Limited) will use each winner’s, and each entrant’s email address for the purpose of administering this Competition. By entering the Competition, you agree that Hestview Limited, Sky Betting and Gaming and their group companies may use the details you give us to contact you about each of our products and services that may be of interest to you. You can change your direct marketing preferences by contacting us on 0330 024 4777 or support@skybet.com. You can also click on the "unsubscribe" link in direct marketing emails from us.</li>
             </ol>
