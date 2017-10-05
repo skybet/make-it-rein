@@ -15,7 +15,7 @@
   <body>
     <?php include_once('../includes/productHeader.inc.php'); ?>
     <?php include_once('../includes/navBar.inc.php'); ?>
-
+    
     <div class="container">
       <div>
         <h1>Admin Race Generator</h1>
