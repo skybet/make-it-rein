@@ -1,7 +1,7 @@
 <?php
 
 include __DIR__.'/init.php';
-include __DIR__.'/db.php';
+//include __DIR__.'/db.php';
 include __DIR__.'/logic/validatePredictions.php';
 
 $db = get_db();
