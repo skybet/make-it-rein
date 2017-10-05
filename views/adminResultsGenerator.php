@@ -16,9 +16,9 @@ $races = [1,2,3];
     <link rel="stylesheet" type="text/css" href="<?php echo '../css/bootstrap/bootstrap.min.css' ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo '../css/fontAwesome/css/font-awesome.min.css'?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo '../css/rein.css'?>"/>
-    <link rel="icon" href="<?php echo '../img/favicon.ico'?>" type="image/x-icon">  
+    <link rel="icon" href="<?php echo '../img/favicon.ico'?>" type="image/x-icon">
    </head>
- 
+
    <body>
     <?php include_once('../includes/productHeader.inc.php'); ?>
     <?php include_once('../includes/navBar.inc.php'); ?>
@@ -30,7 +30,7 @@ $races = [1,2,3];
       <?php
           foreach ($races as $race) {
               $hf = new HorseFactory($pdo);
-              $horses = $hf->getRaceHorses($race, 1);
+              $horses = $hf->getRaceHorses($race, 5);
               echo "<h3>Race $race</h3>";
               for($x=1; $x<=3; $x++){
                 echo "<span>Position $x: </span>";
