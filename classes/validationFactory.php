@@ -20,7 +20,7 @@
             JOIN Horse
                 ON HR.HorseId = Horse.HorseId
             WHERE
-                HR.HorseRaceLinkId = horseracelinkid;
+                HR.HorseRaceLinkId = :horseracelinkid;
             ");
 
             $q->execute([
