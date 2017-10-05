@@ -1,9 +1,9 @@
-// var race1firstPrev, race1secondPrev, race1thirdPrev, race2firstPrev, race2secondPrev, race2thirdPrev, race3firstPrev, race3secondPrev, race3thirdPrev;
+var race1firstPrev, race1secondPrev, race1thirdPrev, race2firstPrev, race2secondPrev, race2thirdPrev, race3firstPrev, race3secondPrev, race3thirdPrev;
 
 // $("#race1first").change(function() {
 //     var value = $(this).val();
 //     try {
-//         $("option[value='" + race1firstPrev + "']").prop('disabled', false);
+//         //$("option[value='" + race1firstPrev + "']").prop('disabled', false);
 //     } catch (error) {
 //         //Do nothing
 //     }
@@ -98,4 +98,3 @@
 //     $("option[value='" + value + "']").prop('disabled', true);
 //     race3thirdPrev = value;
 // });
-
