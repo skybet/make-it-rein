@@ -9,7 +9,7 @@ $db = get_db();
 $userEmail = $_POST['email'];
 $userId;
 $raceArray = [];
-
+echo $_POST['race1first'];
 array_push(
     $raceArray,
     $race1first = $_POST['race1first'],
