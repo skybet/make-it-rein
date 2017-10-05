@@ -1,12 +1,17 @@
 <?php
 
+include __DIR__.'/init.php';
+include __DIR__.'/db.php';
+include __DIR__.'/logic/validatePredictions.php';
+
+$db = get_db();
 
 $userEmail = $_POST['email'];
-
-
+$userId;
 $raceArray = [];
-
-array_push( $raceArray,
+echo $_POST['race1first'];
+array_push(
+    $raceArray,
     $race1first = $_POST['race1first'],
     $race1second = $_POST['race1second'],
     $race1third = $_POST['race1third'],
@@ -18,30 +23,31 @@ array_push( $raceArray,
     $race3third = $_POST['race3third']
 );
 
-// var_dump($raceArray);
+$userId = checkingUserEmail($userEmail, $db);
 
-$userId;
+$predArray = createPredictionArray($raceArray, $userId); //called after userid is set
 
-include __DIR__.'/init.php';
-include __DIR__.'/db.php';
+checkUserRound($db, $predArray, $race1first, $userId);
 
-$pdo = get_db();
+function writeUserPrediction($predArray, $db)
+{
+    $pf = new PredictionFactory($db);
 
-// var_dump($pdo);
+    $predArray = [];
 
-$uf = new UserFactory($pdo);
 
-// echo PHP_EOL;
-// var_dump($uf);
-// echo PHP_EOL;
+    foreach ($predArray as $row) {
+        $pf->save($row);
+        // print_r($row);
+        // echo PHP_EOL;
+    }
+}
+$uf = new UserFactory($db);
 
 $emailForUse = $uf->byEmail($userEmail);
-
-if(!isset($emailForUse))
-{
+if (!isset($emailForUse)) {
     echo "not in db";
-}
-else{
+} else {
     // print_r($emailForUse[0][0]);
     $userId = $emailForUse[0][0];
     require 'sendgrid-php/vendor/autoload.php';
@@ -63,30 +69,17 @@ else{
 }
 
 
-$predArray = [];
 
-foreach($raceArray as $i => $row)
+
+function createPredictionArray($raceArray, $userId)
 {
-    $i = ($i%3)+1;
-    // echo $i;
-    $pred = new Prediction($row, $userId, $i );
-    array_push($predArray, $pred);
-}
+    $predArray = [];
 
-$pf = new PredictionFactory($pdo);
-
-foreach($predArray as $row)
-{
-    $pf->save($row);
-    // print_r($row);
-    // echo PHP_EOL;
-}
-
-
-
-
-
-
-
-
-?>
+    foreach ($raceArray as $i => $row) {
+        $i = ($i%3)+1;
+        // echo $i;
+        $pred = new Prediction($row, $userId, $i);
+        array_push($predArray, $pred);
+    };
+    return $predArray;
+};

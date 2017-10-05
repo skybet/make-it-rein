@@ -45,7 +45,7 @@
                             <select id="race1first" name="race1first" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                                foreach($race1 as $horse){
+                                foreach ($race1 as $horse) {
                                     echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                                 }
                             ?>
@@ -57,7 +57,7 @@
                             <select id="race1second" name="race1second" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race1 as $horse){
+                            foreach ($race1 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -69,7 +69,7 @@
                             <select id="race1third" name="race1third" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race1 as $horse){
+                            foreach ($race1 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -87,7 +87,7 @@
                             <select id="race2first" name="race2first" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race2 as $horse){
+                            foreach ($race2 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -99,7 +99,7 @@
                             <select id="race2second" name="race2second" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race2 as $horse){
+                            foreach ($race2 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -111,7 +111,7 @@
                             <select id="race2third" name="race2third" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                                foreach($race2 as $horse){
+                                foreach ($race2 as $horse) {
                                     echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                                 }
                             ?>
@@ -129,7 +129,7 @@
                             <select id="race3first" name="race3first" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -141,7 +141,7 @@
                             <select id="race3second" name="race3second" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -153,7 +153,7 @@
                             <select id="race3third" name="race3third" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>

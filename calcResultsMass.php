@@ -13,9 +13,12 @@
   $ids = $r->fetchAll();
 
   $winnerList = [];
+  $looserList = [];
 
   for($i=0;$i<count($ids);$i++)
   {
+
+    $flag=false;
     $r = $db->prepare("
         Select HorseRaceLinkId, Position from Prediction where UserId = :id ORDER BY HorseRaceLinkId;
     ");
@@ -24,6 +27,14 @@
       ['id' => $ids[$i][0]]
     );
     $row = $r->fetchAll();
+
+    // echo $ids[$i][0];
+    // echo count($row);
+
+    if((int)count($row)==0)
+    { 
+      $flag=true;
+    }
   
     $hr = $db->prepare("
         select HorseRaceLinkId, Result as Position from HorseRaceLink where HorseRaceLinkId IN (:id1, :id2, :id3, :id4, :id5, :id6, :id7, :id8, :id9) ORDER BY HorseRaceLinkId;
@@ -42,18 +53,29 @@
     ]);
   
     $HRrow = $hr->fetchAll();
-  
-    if($HRrow === $row)
+
+    if($flag==false)
     {
-        array_push($winnerList, $ids[$i][0]);
-    }
-    else{
-      echo "no win";
+      if($HRrow === $row)
+      {
+          array_push($winnerList, $ids[$i][0]);
+      }
+      else{
+        array_push($looserList, $ids[$i][0]);
+      }
     }
 
   }
 
+
+
+
   print_r($winnerList);
+
+  echo "<br><br>";
+
+
+  print_r($looserList);
 
 
 
