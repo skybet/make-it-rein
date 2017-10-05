@@ -8,14 +8,14 @@ function checkingUserEmail($email, $db)
     if (empty($r)) {
 
     //Validate horses that have been input and then input prediction
-        echo "Create new user and post prediction";
+        //echo "Create new user and post prediction";
         $user = new User($db);
         $user->setEmail($email);
         $userId = $userFactory->save($user);
         return $userId;
     } else {
         //Check user has not already predicted this round
-        echo "User has predicted before but maybe not in this round<br>";
+        //echo "User has predicted before but maybe not in this round<br>";
         $userId = $r[0][0];
         return $userId;
     };
@@ -32,11 +32,11 @@ function checkUserRound($db, $predArray, $race1first, $userId)
         writeUserPrediction($predArray, $db);
 
         $textForReturn = "prediction written to db";
-        header('Location: success.php');
+        header('Location: ../success.php');
         return $textForReturn;
     } else {
         $textForReturn = "You have already predicted on this round";
-        header('Location: fail.php');
+        header('Location: ../fail.php');
         return $textForReturn;
     }
 };

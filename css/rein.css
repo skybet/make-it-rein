@@ -77,6 +77,10 @@ body {
     color: #5cb85c;
 }
 
+.cl-warning {
+    color: #e13443;
+}
+
 .cl-gold {
     color: #bf9832;
 }
