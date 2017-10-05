@@ -8,7 +8,7 @@ class HorseFactory{
         $this->db = $db;
     }
 
-    public function getRaceHorses($raceId, $roundId = 1){ //for MVP this is set to the 1st round
+    public function getRaceHorses($raceId, $roundId){ //for MVP this is set to the 1st round
         $q = $this->db->prepare("
             SELECT 
                 Horse.HorseId as HorseId,
