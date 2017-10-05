@@ -30,17 +30,17 @@ $races = [1,2,3];
       <?php
           foreach ($races as $race) {
               $hf = new HorseFactory($pdo);
-              $horses = $hf->getRaceHorses($race);
+              $horses = $hf->getRaceHorses($race, 1);
               echo "<h3>Race $race</h3>";
               for($x=1; $x<=3; $x++){
-                echo "<label for='race'>Position $x</label>";
+                echo "<span>Position $x: </span>";
                 echo "<select class='cl-black' name='race".$race."pos".$x."'>";
                   foreach($horses as $horse){
                     echo "<option value='".$horse->linkId."'>$horse->horseName</option>";
                   }
-                echo "</select>";
+                echo "</select><br>";
               }
-              echo "<br>";
+              // echo "<br>";
           }
       ?>
       <br>
@@ -48,5 +48,8 @@ $races = [1,2,3];
       </form>
       </div>
      </div>
+     <?php include_once('../includes/footer.inc.php'); ?>
    </body>
+   <script src="<?php echo '../js/jquery-3.2.1.min.js'?>"> </script>
+  <script src="<?php echo '../js/indexLogic.js'?>"> </script>
  </html>
