@@ -2,25 +2,32 @@
 
 class HorseRaceLinkFactory{
 
-    public function __construct($db){
+    public function __construct(PDO $db){
         $this->db = $db;
     }
 
     public function getLink($linkId){
+      echo $linkId;
         $stmt = $this->db->prepare("
-            select * 
-            from horseracelink
-            where horseracelinkid = :id;
+            select *
+            from HorseRaceLink
+            where HorseRaceLinkId = :linkid
         ");
-        $result = $stmt->execute([
-            'id' => $linkId
+
+        $stmt->execute([
+          'linkid'=>$linkId
         ]);
 
-        $horseRaceLink = new HorseRaceLink();
-        $horseRaceLink->id = $result['horseracelinkid'];
-        $horseRaceLink->horseId = $result['horseid'];
-        $horseRaceLink->raceID = $result['raceid'];
-        $horseRaceLink->result = $result['result'];
+        $result = $stmt->fetchAll();
+
+        $horseRaceLink = new HorseRaceLink(null, null, null, null);
+
+        foreach($result as $r){
+          $horseRaceLink->id = $r['HorseRaceLinkId'];
+          $horseRaceLink->horseId = $r['HorseId'];
+          $horseRaceLink->raceId = $r['RaceId'];
+          $horseRaceLink->result = $r['Result'];
+        }
 
         return $horseRaceLink;
     }
@@ -43,14 +50,19 @@ class HorseRaceLinkFactory{
     }
     private function update(HorseRaceLink $link) {
         $stmt = $this->db->prepare("
-            update horseracelink set
-                result = :result
-            where id = :linkid
+            update HorseRaceLink set
+                Result = :result
+            where HorseRaceLinkId = :linkid
         ");
         $result = $stmt->execute([
             'result' => $link->result,
             'linkid' => $link->id
         ]);
+        if($result){
+          echo "<p>Hit</p>";
+        } else {
+          echo "<p>Broke</p>";
+        }
     }
 
 }

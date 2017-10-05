@@ -25,12 +25,12 @@
     ?>
     <div class="container contentBanner">
         <div class="">
-            <h1 class="txt-ctr">
+            <h1 class="txt-ctr marb-0">
                 Race Day 1
             </h1>
             <form method="post" class="txt-ctr" action="sendData.php">
                 <div class="race1">
-                    <h3 class="txt-left"> Race 1 - Ascot 13:50</h3>
+                    <h3 class="txt-left marb-0"> Race 1 - Ascot 13:50</h3>
                     <div>
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
@@ -38,7 +38,7 @@
                             <select id="race1first" name="race1first" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                                foreach($race1 as $horse){
+                                foreach ($race1 as $horse) {
                                     echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                                 }
                             ?>
@@ -50,7 +50,7 @@
                             <select id="race1second" name="race1second" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race1 as $horse){
+                            foreach ($race1 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -62,7 +62,7 @@
                             <select id="race1third" name="race1third" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race1 as $horse){
+                            foreach ($race1 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="race2">
-                    <h3 class="txt-left"> Race 2 - York 14:50</h3>
+                    <h3 class="txt-left marb-0"> Race 2 - York 14:50</h3>
                     <div>
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
@@ -80,7 +80,7 @@
                             <select id="race2first" name="race2first" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race2 as $horse){
+                            foreach ($race2 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -92,7 +92,7 @@
                             <select id="race2second" name="race2second" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race2 as $horse){
+                            foreach ($race2 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -104,7 +104,7 @@
                             <select id="race2third" name="race2third" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                                foreach($race2 as $horse){
+                                foreach ($race2 as $horse) {
                                     echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                                 }
                             ?>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="race3">
-                    <h3 class="txt-left"> Race 3 - Newmarket 17:20</h3>
+                    <h3 class="txt-left marb-0"> Race 3 - Newmarket 17:20</h3>
                     <div>
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
@@ -122,7 +122,7 @@
                             <select id="race3first" name="race3first" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -134,7 +134,7 @@
                             <select id="race3second" name="race3second" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -146,7 +146,7 @@
                             <select id="race3third" name="race3third" class="cl-black" required>
                                 <option disabled selected value> -- Select a horse -- </option>
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
