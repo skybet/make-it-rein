@@ -26,6 +26,8 @@ class PredictionFactory {
     return true;
   }
 
+
+
 }
 
  ?>
