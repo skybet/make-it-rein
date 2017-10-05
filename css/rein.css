@@ -73,6 +73,10 @@ body {
     color: black;
 }
 
+.cl-success {
+    color: #5cb85c;
+}
+
 .cl-gold {
     color: #bf9832;
 }
