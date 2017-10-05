@@ -21,11 +21,12 @@ class HorseFactory{
                 ON HR.HorseId = Horse.HorseId
             WHERE 
                 Race.RaceId = :raceId &&
-                Race.RoundId = 1;
+                Race.RoundId = :roundId;
         ");
 
         $q->execute([
-            'raceId' => $raceId
+            'raceId' => $raceId,
+            'roundId' => $roundId
         ]);
 
         if (!$q) {
