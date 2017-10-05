@@ -25,9 +25,9 @@
         //echo $currentId;
         //
         $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(1,$currentId);
-        $race2 = $hf->getRaceHorses(2,$currentId);
-        $race3 = $hf->getRaceHorses(3,$currentId);
+        $race1 = $hf->getRaceHorses(13,$currentId);
+        $race2 = $hf->getRaceHorses(14,$currentId);
+        $race3 = $hf->getRaceHorses(15,$currentId);
         //
     ?>
     <div class="container contentBanner">
