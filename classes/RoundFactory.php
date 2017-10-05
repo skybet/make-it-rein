@@ -32,16 +32,32 @@ class RoundFactory {
       //var_dump($row[0]);
       return $currentRound;
     //  return($);
-
-
-
-
-
-
-
-
-      //return $currentDate;
     }
+
+
+
+    public function getStartDate($currentRound){
+      $s = $this->db->prepare("
+      select StartDate from Round where RoundId=:roundID
+      ");
+
+      $s->execute(['roundID' => $currentRound]);
+      $row = $s->fetchAll();
+      if (!$row){
+          return null;
+      }
+
+        echo $row[0][0]. "TEST 22";
+
+        return $row;
+    }
+
+}
+
+
+
+
+
 
 
 
@@ -54,6 +70,6 @@ class RoundFactory {
 
 
 
-}
+
 
 ?>
