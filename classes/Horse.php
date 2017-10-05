@@ -2,10 +2,10 @@
 
 class Horse {
 
-    private $id;
-    private $horseName;
+    public $id;
+    public $horseName;
 
-    function __CONSTRUCT ($id, $horseName){
+    function __construct($id, $horseName){
 
         $this->id = $id;
         $this->horseName = $horseName;
