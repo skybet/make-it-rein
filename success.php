@@ -18,7 +18,8 @@
         <div class="mart-10p">
             <div class="txt-ctr">
                 <h1>Your prediction has been successfully saved!</h1>
-                <h3>The winner will be contacted by the email address provided.<br>Good luck with your prediction</h3>
+                <h4>A confirmation email of your prediction has been sent to you.</h4>
+                <h2>The winner will be contacted via the email address provided.<br>Good luck with your prediction!</h2>
                 <i class="fa fa-check fa-5x cl-success" aria-hidden="true"></i>
             </div>
 
@@ -27,10 +28,16 @@
               <input type="submit" value="Check my Predictions" class="cl-white btn btn-success">
             </form> -->
         </div>
+        <div class="mart-10p">
+            <p class="txt-ctr txt-underline">
+                This page will redirect back to the homepage in <span id="countDown"></span>
+            </p>
+        </div>   
     </div>
 
     <?php include_once('includes/footer.inc.php'); ?>
 
 </body>
-    <script src=""></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/success.js"></script>
 </html>

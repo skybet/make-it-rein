@@ -27,10 +27,16 @@
               <input type="submit" value="Check my Predictions" class="cl-white btn btn-success">
             </form> -->
         </div>
+        <div class="mart-10p">
+            <p class="txt-ctr txt-underline">
+                This page will redirect back to the homepage in <span id="countDown"></span>
+            </p>
+        </div>    
     </div>
 
     <?php include_once('includes/footer.inc.php'); ?>
 
 </body>
-    <script src=""></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/fail.js"></script>
 </html>

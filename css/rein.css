@@ -85,6 +85,18 @@ body {
     color: #bf9832;
 }
 
+.jockey-gold {
+    color: #deb146;
+}
+
+.jockey-silver {
+    color: #9c9c9c;
+}
+
+.jockey-bronze {
+    color: #ce814d;
+}
+
 .mar-auto {
     margin: auto;
 }
@@ -107,6 +119,14 @@ body {
 
 .mart-10 {
     margin-top: 10px;
+}
+
+.mart-15 {
+    margin-top: 15px;
+}
+
+.mart-20 {
+    margin-top: 20px;
 }
 
 .mart-10p {
@@ -223,6 +243,10 @@ body {
 
 .fs-18 {
     font-size: 18px;
+}
+
+.fs-20 {
+    font-size: 20px;
 }
 
 .disp-in {
@@ -354,7 +378,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: auto;
-    min-height: 600px;
+    min-height: 700px;
 }
 
 
