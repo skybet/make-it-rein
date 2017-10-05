@@ -1,5 +1,7 @@
 <?php
 
+include("Horse.php");
+
 class HorseFactory{
     
     public function __construct(PDO $db){
@@ -44,7 +46,17 @@ class HorseFactory{
 
         return $raceHorseArray;
     }
-    
+
+    public function getAllHorses(){
+        $r = $this->db->query("select * from horse");
+        $horses = [];
+        foreach($r as $row){
+            $horse = new Horse($row["HorseId"], $row["HorseName"]); 
+            array_push($horses, $horse);    
+        }
+        return $horses;
+    }
+
 }
 
 

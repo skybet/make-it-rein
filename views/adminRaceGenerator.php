@@ -15,10 +15,20 @@
   <body>
     <?php include_once('../includes/productHeader.inc.php'); ?>
     <?php include_once('../includes/navBar.inc.php'); ?>
+    <?php include_once('../db.php'); ?>
+    <?php include_once('../classes/HorseFactory.php'); ?>
+    <?php include_once('../classes/HorseRace.php'); ?>
+    <?php 
+      
+      $db = get_db();
+      $hf = new HorseFactory($db); 
+      $horses = $hf->getAllHorses();
+    ?>
 
     <div class="container">
       <div>
         <h1>Admin Race Generator</h1>
+        <form action="/action_page.php"> 
         <h3>Round</h3>
         <select id="round" class="cl-black">
           <option value="1">1 - 04/09/17-10/09/17</option>
@@ -29,8 +39,8 @@
         </select>
 
         <div>
-          <form action="/action_page.php"> 
             <h3>Races</h3>
+              <select id=course class="cl-black">
               <option value="1">Ascot</option>
               <option value="2">Aintree</option>
               <option value="3">Newmarket</option>
@@ -39,27 +49,32 @@
               <option value="6">York</option>
               <option value="7">Nottingham</option>
               <option value="8">Doncaster</option>
+              <option value="9">Pontefract</option>
+              <option value="10">Leicester</option>
             </select>
-            <button type="button" onclick="addRaceToArray()" class="cl-black">Select Meeting</button>
-            <input type="time" name="usr_time" class="cl-black">
-            <button type="button" onclick="selectTime()" class="cl-black">Select Time</button>
-          </form> 
+        
+            <input type="date" name="race_date" class="cl-black">
+            <input type="time" name="race_time" class="cl-black">
+            <button type="button" onclick="selectMeetingselectTime()" class="cl-black">Add Meeting to Round</button>
         </div>
 
       <!-- SELECT2 Multi Select Box -->
-        <!-- <div>
-            <h3>Horses</h3>
+        <div>
+            <h3>Horses</h3:>
+            <br><br>
             <select name="horses" multiple="" class="cl-black">
-            <option value="1">Take A Break</option>
-            <option value="2">The Last Samuri</option>
-            <option value="3">Regal Encore</option>
-            <option value="4">Rule The World</option>
-            <option value="5">Harry Chaplain</option>
+                <?php
+                foreach($horses as $horse){
+                  echo '<option value="'.$horse->id.'">'.$horse->horseName.'</option>';
+                }
+                ?>
             </select>
             <br><br>
-            <button type="button" onclick="addHorse()" class="cl-black">Add Horse</button>
-            <button type="button" onclick="removeHorse()" class="cl-black">Remove Horse</button><br><br>
-        </div> -->
+            <button type="button" onclick="addHorse()" class="cl-black">Add Horse to Race -></button>
+            <br><br>
+            <button type="button" onclick="removeHorse()" class="cl-black"><- Remove Horse from Race</button><br><br>
+        </div>
+        </form>
       </div>
     </div>
 
