@@ -19,9 +19,9 @@
     <?php
         $db = get_db();
         $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(1201);
-        $race2 = $hf->getRaceHorses(1211);
-        $race3 = $hf->getRaceHorses(1221);
+        $race1 = $hf->getRaceHorses(1);
+        $race2 = $hf->getRaceHorses(2);
+        $race3 = $hf->getRaceHorses(3);
     ?>
     <div class="container contentBanner">
         <div class="">
@@ -35,7 +35,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 1st: </span>
-                            <select name="race1first" class="cl-black">
+                            <select id="race1first" name="race1first" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                                 foreach($race1 as $horse){
                                     echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -46,7 +47,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 2nd:</span>
-                            <select name="race1second" class="cl-black">
+                            <select id="race1second" name="race1second" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                             foreach($race1 as $horse){
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -57,7 +59,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 3rd:</span>
-                            <select name="race1third" class="cl-black">
+                            <select id="race1third" name="race1third" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                             foreach($race1 as $horse){
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -74,7 +77,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 1st:</span>
-                            <select name="race2first" class="cl-black">
+                            <select id="race2first" name="race2first" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                             foreach($race2 as $horse){
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -85,7 +89,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 2nd:</span>
-                            <select name="race2second" class="cl-black">
+                            <select id="race2second" name="race2second" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                             foreach($race2 as $horse){
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -96,7 +101,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 3rd:</span>
-                            <select name="race2third" class="cl-black">
+                            <select id="race2third" name="race2third" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                                 foreach($race2 as $horse){
                                     echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -113,7 +119,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 1st:</span>
-                            <select name="race3first" class="cl-black">
+                            <select id="race3first" name="race3first" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                             foreach($race3 as $horse){
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -124,7 +131,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 2nd:</span>
-                            <select name="race3second" class="cl-black">
+                            <select id="race3second" name="race3second" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                             foreach($race3 as $horse){
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -135,7 +143,8 @@
                         <div class="w-33p fl-left pad-10">
                         <div><img src="http://www.stickpng.com/assets/thumbs/587172f57b7f6103e35c6cc1.png" alt="" height="100" width="100"></div>
                             <span > 3rd:</span>
-                            <select name="race3third" class="cl-black">
+                            <select id="race3third" name="race3third" class="cl-black" required>
+                                <option disabled selected value> -- Select a horse -- </option>
                             <?php
                             foreach($race3 as $horse){
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
@@ -147,7 +156,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="padt-50 ">
-                    <input type="email" name="email" placeholder="Enter your email" class="bord-rd cl-black pad-10 h-34">
+                    <input type="email" name="email" placeholder="Enter your email" class="bord-rd cl-black pad-10 h-34" required>
                     <input type="submit" value="Submit Predictions" class="cl-white btn btn-success">
                 </div>
             </form>
@@ -155,7 +164,7 @@
     </div>
 
     <?php include_once('includes/footer.inc.php'); ?>
-
 </body>
-    <script src=""></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/indexLogic.js"></script>
 </html>
