@@ -9,7 +9,7 @@
             $this->db = $db;
         }
 
-        public function checkRoundIdAndUser($HorseRaceLinkId)
+        public function checkRoundIdAndUser($HorseRaceLinkId, $UserId)
         {
             $q = $this->db->prepare("
             SELECT
@@ -23,14 +23,44 @@
                 HR.HorseRaceLinkId = horseracelinkid;
             ");
 
-            $roundId = $q->execute([
+            $q->execute([
                 'horseracelinkid' => $HorseRaceLinkId
             ]);
 
-            if (!$q) {
+            $roundId = $q->fetchAll();
+
+            $q2 = $this->db->prepare("
+              SELECT rac.RoundId FROM MakeItRein.Prediction prd
+              JOIN horseracelink hrl
+              ON hrl.HorseRaceLinkId = prd.HorseRaceLinkId
+              JOIN Race rac
+              ON rac.RaceId = hrl.RaceId
+              where userid = :userId
+              group by prd.UserId, rac.RoundId
+              order by rac.RoundId desc
+              LIMIT 1");
+
+            $q2->execute([
+                  ':userId' => $UserId
+              ]);
+
+            $returnedRow = $q2->fetchAll();
+
+            if (!$q2) {
                 return false;
             }
 
-            return $roundId;
+            if (empty($returnedRow)) {
+                echo "You have never bet";
+                return true;
+            } else {
+                if ($returnedRow[0][0] == $roundId[0][0]) {
+                    echo "you have already bet on this round";
+                    return false;
+                } else {
+                    echo "you have not bet on this round yet" ;
+                    return true;
+                }
+            }
         }
     }

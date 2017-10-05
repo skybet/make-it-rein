@@ -1,43 +1,35 @@
 <?php
-require '../init.php';
-require '../db.php';
 
-//INPUT THAT IS REQUIRED
-$email = 'User3@user.com';
-$race1first = 5;
+function checkingUserEmail($email, $db)
+{
+    $userFactory = new UserFactory($db);
+    $r = $userFactory->byEmail($email);
 
-//get DB
-$db = get_DB();
-
-
-$userFactory = new UserFactory($db);
-$r = $userFactory->byEmail($email);
-var_dump($r);
-if (empty($r)) {
+    if (empty($r)) {
 
     //Validate horses that have been input and then input prediction
-    echo "Input prediction to DB";
-} else {
-    //Check user has not already predicted this round
-    echo "User has predicted before but maybe not in this round<br>";
-    CheckUserRound($db, $race1first);
+        echo "Create new user and post prediction";
+        $user = new User($db);
+        $user->setEmail($email);
+        $userId = $userFactory->save($user);
+        return $userId;
+    } else {
+        //Check user has not already predicted this round
+        echo "User has predicted before but maybe not in this round<br>";
+        $userId = $r[0][0];
+        return $userId;
+    };
 };
 
-
-function CheckUserRound($db, $race1first)
+function checkUserRound($db, $predArray, $race1first, $userId)
 {
     $vf = new ValidationFactory($db);
-    $currentRound = 2;
 
-    $roundPrediction = $vf->checkRoundIdAndUser($race1first);
-    $roundPrediction = (int)$roundPrediction;
+    $q = $vf->checkRoundIdAndUser($race1first, $userId);
 
-    if ($currentRound == $roundPrediction) {
-        //Enable users to change their entries within competition window
-        echo "already placed prediction on this round";
+    if ($q) {
+        writeUserPrediction($predArray, $db);
     } else {
-
-        //Validate horses that have been input and then input prediction
-        echo "input prediction to db";
+        echo "sod off";
     }
 }

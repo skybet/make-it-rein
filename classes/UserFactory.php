@@ -4,7 +4,6 @@ class UserFactory
 {
     private $db;
 
-
     public function __construct(PDO $db)
     {
         $this->db = $db;
@@ -24,18 +23,12 @@ class UserFactory
             return null;
         }
 
-        // echo "HERRRRRREEEE";
-        // var_dump($row);
         return $row;
     }
-
-
-
 
     // if ($uf->byEmail(emailfromfrontend)) {
     //   $msg = "username already in use"
     //   <span><?php echo $msg;
-
 
     public function save(User $user)
     {
@@ -50,6 +43,6 @@ class UserFactory
             return false;
         }
         $user->setId($this->db->lastInsertId());
-        return true;
+        return $user->getId();
     }
 }

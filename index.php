@@ -19,9 +19,9 @@
     <?php
         $db = get_db();
         $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(1201);
-        $race2 = $hf->getRaceHorses(1211);
-        $race3 = $hf->getRaceHorses(1221);
+        $race1 = $hf->getRaceHorses(1);
+        $race2 = $hf->getRaceHorses(2);
+        $race3 = $hf->getRaceHorses(3);
     ?>
     <div class="container contentBanner">
         <div class="">
@@ -37,7 +37,7 @@
                             <span > 1st: </span>
                             <select name="race1first" class="cl-black">
                             <?php
-                                foreach($race1 as $horse){
+                                foreach ($race1 as $horse) {
                                     echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                                 }
                             ?>
@@ -48,7 +48,7 @@
                             <span > 2nd:</span>
                             <select name="race1second" class="cl-black">
                             <?php
-                            foreach($race1 as $horse){
+                            foreach ($race1 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -59,7 +59,7 @@
                             <span > 3rd:</span>
                             <select name="race1third" class="cl-black">
                             <?php
-                            foreach($race1 as $horse){
+                            foreach ($race1 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -76,7 +76,7 @@
                             <span > 1st:</span>
                             <select name="race2first" class="cl-black">
                             <?php
-                            foreach($race2 as $horse){
+                            foreach ($race2 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -87,7 +87,7 @@
                             <span > 2nd:</span>
                             <select name="race2second" class="cl-black">
                             <?php
-                            foreach($race2 as $horse){
+                            foreach ($race2 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -98,7 +98,7 @@
                             <span > 3rd:</span>
                             <select name="race2third" class="cl-black">
                             <?php
-                                foreach($race2 as $horse){
+                                foreach ($race2 as $horse) {
                                     echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                                 }
                             ?>
@@ -115,7 +115,7 @@
                             <span > 1st:</span>
                             <select name="race3first" class="cl-black">
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -126,7 +126,7 @@
                             <span > 2nd:</span>
                             <select name="race3second" class="cl-black">
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
@@ -137,7 +137,7 @@
                             <span > 3rd:</span>
                             <select name="race3third" class="cl-black">
                             <?php
-                            foreach($race3 as $horse){
+                            foreach ($race3 as $horse) {
                                 echo '<option value="'.$horse->linkId.'">'.$horse->horseName.'</option>';
                             }
                         ?>
