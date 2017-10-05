@@ -1,3 +1,4 @@
+<?php require __DIR__."/init.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,23 +14,20 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
-    <?php include_once('db.php'); ?>
-    <?php include_once('classes/HorseFactory.php'); ?>
-    <?php include_once('classes/RoundFactory.php'); ?>
-    <?php include_once('classes/HorseRace.php'); ?>
+    
     <?php
         $db = get_db();
 
         $rfactory=new RoundFactory($db);
-        $currentId = $rfactory->getCurrentRound();
-        //$currentId = 1;
-        //echo $currentId;
-        //
+        $raceFactory = new RaceFactory($db);
         $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(13,$currentId);
-        $race2 = $hf->getRaceHorses(14,$currentId);
-        $race3 = $hf->getRaceHorses(15,$currentId);
-        //
+
+        $currentId = $rfactory->getCurrentRound();
+        $raceIds = $raceFactory->byRoundId($currentId);
+
+        $race1 = $hf->getRaceHorses($raceIds[0]->id,$currentId);
+        $race2 = $hf->getRaceHorses($raceIds[1]->id,$currentId);
+        $race3 = $hf->getRaceHorses($raceIds[2]->id,$currentId);
     ?>
     <div class="container contentBanner">
         <div class="">
