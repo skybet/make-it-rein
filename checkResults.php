@@ -15,6 +15,7 @@
 
   </body>
 </html> -->
+<?php require __DIR__."/init.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,16 +32,6 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
-    <?php include_once('db.php'); ?>
-    <?php include_once('classes/HorseFactory.php'); ?>
-    <?php include_once('classes/HorseRace.php'); ?>
-    <?php
-        $db = get_db();
-        $hf = new HorseFactory($db);
-        $race1 = $hf->getRaceHorses(1);
-        $race2 = $hf->getRaceHorses(2);
-        $race3 = $hf->getRaceHorses(3);
-    ?>
     <div class="container contentBanner">
         <div class="mart-10p">
             <h1 class="txt-ctr">Check Your Results</h1>
