@@ -56,3 +56,46 @@ update Race set MeetingId = 6, RaceDate = '2017-11-12 09:00:00' where RaceId = 2
 update Race set MeetingId = 7, RaceDate = '2017-11-12 13:00:00' where RaceId = 29;
 update Race set MeetingId = 8, RaceDate = '2017-11-12 15:20:00' where RaceId = 30;
 
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('1', '13');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('3', '13');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('5', '13');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('7', '13');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('9', '13');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('11', '13');
+
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('13', '14');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('15', '14');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('17', '14');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('2', '14');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('4', '14');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('6', '14');
+
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('8', '15');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('10', '15');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('12', '15');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('14', '15');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('16', '15');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('18', '15');
+
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('4', '16');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('8', '16');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('13', '16');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('18', '16');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('1', '16');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('5', '16');
+
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('1', '17');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('5', '17');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('10', '17');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('15', '17');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('2', '17');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('6', '17');
+
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('11', '18');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('16', '18');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('3', '18');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('7', '18');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('12', '18');
+INSERT INTO HorseRaceLink (HorseId, RaceId) VALUES ('17', '18');
+
+update Horse set HorseName = "Highlander" where HorseId = 15;
