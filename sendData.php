@@ -33,12 +33,44 @@ function writeUserPrediction($predArray, $db)
 {
     $pf = new PredictionFactory($db);
 
+    $predArray = [];
+
+
     foreach ($predArray as $row) {
         $pf->save($row);
         // print_r($row);
-    // echo PHP_EOL;
+        // echo PHP_EOL;
     }
 }
+$uf = new UserFactory($db);
+
+$emailForUse = $uf->byEmail($userEmail);
+if (!isset($emailForUse)) {
+    echo "not in db";
+} else {
+    // print_r($emailForUse[0][0]);
+    $userId = $emailForUse[0][0];
+    require 'sendgrid-php/vendor/autoload.php';
+
+    $from = new SendGrid\Email("Make it Rein", "Noreply@makeitrein.com");
+    $subject = "Your Bet Confirmation";
+    $to = new SendGrid\Email("Example User", "harrychaplain@hotmail.co.uk");
+    $content = new SendGrid\Content("text/html", "<h1> Your bet has been placed!</h1><h3> Good Luck!</h3>");
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
+
+    $apiKey = $apiKey = getenv('SENDGRID_API_KEY');
+
+    $sg = new \SendGrid($apiKey);
+
+    $response = $sg->client->mail()->send()->post($mail);
+    echo $response->statusCode();
+    print_r($response->headers());
+    echo $response->body();
+}
+
+
+
+
 function createPredictionArray($raceArray, $userId)
 {
     $predArray = [];
