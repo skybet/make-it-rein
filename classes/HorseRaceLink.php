@@ -7,10 +7,10 @@ class HorseRaceLink{
     public $result;
 
     public function __construct($id, $horseId, $raceId, $result){
-        $id = $this->id;
-        $horseId = $this->horseId;
-        $raceId = $this->raceId;
-        $result = $this->result;
+        $this->id = $id;
+        $this->horseId = $horseId;
+        $this->raceId = $raceId;
+        $this->result = $result;
     }
 }
 

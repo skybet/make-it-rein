@@ -22,18 +22,10 @@ class UserFactory {
         return null;
     }
 
-      echo "HERRRRRREEEE";
-      echo PHP_EOL;
-      // var_dump($row);
+
+
       return $row;
   }
-
-
-
-
-  // if ($uf->byEmail(emailfromfrontend)) {
-  //   $msg = "username already in use"
-  //   <span><?php echo $msg;
 
 
   public function save(User $user){
