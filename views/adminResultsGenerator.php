@@ -35,7 +35,8 @@
               echo "<h3>Race ".$race->id."</h3>";
               for($x=1; $x<=3; $x++){
                 echo "<span>Position $x: </span>";
-                echo "<select class='cl-black' name='race".(($key)+1)."pos".$x."'>";
+                echo "<select class='race cl-black' name='race".(($key)+1)."pos".$x."' required>";
+                echo "<option disabled selected value> -- Select a horse -- </option>";
                   foreach($horses as $horse){
                     echo "<option value='".$horse->linkId."'>$horse->horseName</option>";
                   }
@@ -50,7 +51,8 @@
       </div>
      </div>
      <?php include_once('../includes/footer.inc.php'); ?>
+
    </body>
    <script src="<?php echo '../js/jquery-3.2.1.min.js'?>"> </script>
-  <script src="<?php echo '../js/indexLogic.js'?>"> </script>
+  <script src="<?php echo '../js/admin-logic.js'?>"> </script>
  </html>
