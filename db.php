@@ -6,10 +6,9 @@ function get_db()
     $db = 'MakeItRein';
     $userdb = 'user1';
     $pass = 'mypass';
-   $dsn = "mysql:host=$host; dbname=$db";
+
+    $dsn = "mysql:host=$host; dbname=$db";
     $pdo = new PDO($dsn, $userdb, $pass);
+    
     return $pdo;
-}
-
-
-?>
+};
