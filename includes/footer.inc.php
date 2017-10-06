@@ -17,7 +17,7 @@
                     © 2017 Hestview Ltd. All Rights Reserved.
                 </div>
                 <div class="w-50p disp-in fl-right txt-right fs-11">
-                    <span>Terms and Conditions</span>   
+                    <span><a class="cl-white txt-underline" href="../views/termsAndConditions.php">Terms and Conditions</a></span>   
                 </div>
             </div>
         </div>

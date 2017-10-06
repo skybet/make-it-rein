@@ -1,12 +1,17 @@
 <?php
 
+include __DIR__.'/init.php';
+include __DIR__.'/db.php';
+include __DIR__.'/logic/validatePredictions.php';
+
+$db = get_db();
 
 $userEmail = $_POST['email'];
-
-
+$userId;
 $raceArray = [];
 
-array_push( $raceArray,
+array_push(
+    $raceArray,
     $race1first = $_POST['race1first'],
     $race1second = $_POST['race1second'],
     $race1third = $_POST['race1third'],
@@ -18,67 +23,37 @@ array_push( $raceArray,
     $race3third = $_POST['race3third']
 );
 
-// var_dump($raceArray);
+$userId = checkingUserEmail($userEmail, $db);
 
-$userId;
+$predArray = createPredictionArray($raceArray, $userId); //called after userid is set
 
-include __DIR__.'/init.php';
-include __DIR__.'/db.php';
+$text = checkUserRound($db, $predArray, $race1first, $userId);
 
-$pdo = get_db();
+echo $text;
+echo "<br><br>";
 
-// var_dump($pdo);
-
-$uf = new UserFactory($pdo);
-
-// echo PHP_EOL;
-// var_dump($uf);
-// echo PHP_EOL;
+$uf = new UserFactory($db);
 
 $emailForUse = $uf->byEmail($userEmail);
-
-if(!isset($emailForUse))
-{
+if (!isset($emailForUse)) {
     echo "not in db";
-}
-else{
+} else {
     // print_r($emailForUse[0][0]);
     $userId = $emailForUse[0][0];
+    require 'sendgrid-php/vendor/autoload.php';
+
+    $from = new SendGrid\Email("Make it Rein", "Noreply@makeitrein.com");
+    $subject = "Your Bet Confirmation";
+    $to = new SendGrid\Email("Example User", "harrychaplain@hotmail.co.uk");
+    $content = new SendGrid\Content("text/html", "<h1> Your bet has been placed!</h1><h3> Good Luck!</h3>");
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
+
+    $apiKey = $apiKey = getenv('SENDGRID_API_KEY');
+
+    $sg = new \SendGrid($apiKey);
+
+    $response = $sg->client->mail()->send()->post($mail);
+    echo $response->statusCode();
+    print_r($response->headers());
+    echo $response->body();
 }
-
-
-$predArray = [];
-
-foreach($raceArray as $i => $row)
-{
-    $i = ($i%3)+1;
-    // echo $i;
-    $pred = new Prediction($row, $userId, $i );
-    array_push($predArray, $pred);
-}
-
-$pf = new PredictionFactory($pdo);
-
-foreach($predArray as $row)
-{
-    $pf->save($row);
-    // print_r($row);
-    // echo PHP_EOL;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>

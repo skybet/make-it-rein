@@ -49,6 +49,10 @@ body {
     width: 50%;
 }
 
+.txt-underline {
+    text-decoration: underline;
+}
+
 .txt-ctr {
     text-align: center;
 }
@@ -67,6 +71,14 @@ body {
 
 .cl-black {
     color: black;
+}
+
+.cl-success {
+    color: #5cb85c;
+}
+
+.cl-warning {
+    color: #e13443;
 }
 
 .cl-gold {
@@ -95,6 +107,10 @@ body {
 
 .mart-10 {
     margin-top: 10px;
+}
+
+.mart-10p {
+    margin-top: 10%;
 }
 
 .mart-28 {
@@ -337,6 +353,8 @@ body {
     background-size: 1140px;
     background-repeat: no-repeat;
     background-position: center;
+    height: auto;
+    min-height: 600px;
 }
 
 
