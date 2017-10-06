@@ -51,9 +51,9 @@ class RoundFactory {
     }
 
     public function getAllRounds(){
-        $q = $this->db->query(”
-            select * from rounds;
-        “);
+        $q = $this->db->query("
+            select * from round;
+        ");
 
        $result = $q->fetchAll();
 
