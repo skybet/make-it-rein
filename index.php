@@ -14,14 +14,18 @@
 <body>
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
-
+    
     <?php
         $db = get_db();
+
         $rfactory=new RoundFactory($db);
+
         $raceFactory = new RaceFactory($db);
         $hf = new HorseFactory($db);
+
         $currentId = $rfactory->getCurrentRound();
         $raceIds = $raceFactory->byRoundId($currentId);
+
         $race1 = $hf->getRaceHorses($raceIds[0]->id,$currentId);
         $race2 = $hf->getRaceHorses($raceIds[1]->id,$currentId);
         $race3 = $hf->getRaceHorses($raceIds[2]->id,$currentId);
@@ -53,7 +57,7 @@
                                         }
                                     ?>
                                     </select>
-                                </div>
+                                </div>    
                             </div>
                         </div>
                         <div class="w-33p fl-left pad-10">
@@ -73,7 +77,7 @@
                                         }
                                     ?>
                                     </select>
-                                </div>
+                                </div>    
                             </div>
                         </div>
                         <div class="w-33p fl-left pad-10">
@@ -93,7 +97,7 @@
                                         }
                                     ?>
                                     </select>
-                                </div>
+                                </div>    
                             </div>
                         </div>
                     </div>
@@ -119,7 +123,7 @@
                                         }
                                     ?>
                                     </select>
-                                </div>
+                                </div>    
                             </div>
                         </div>
                         <div class="w-33p fl-left pad-10">
@@ -139,7 +143,7 @@
                                         }
                                     ?>
                                     </select>
-                                </div>
+                                </div>    
                             </div>
                         </div>
                         <div class="w-33p fl-left pad-10">
@@ -159,7 +163,7 @@
                                         }
                                     ?>
                                     </select>
-                                </div>
+                                </div>    
                             </div>
                         </div>
                     </div>
@@ -185,7 +189,7 @@
                                     }
                                 ?>
                                 </select>
-                            </div>
+                            </div>    
                         </div>
                     </div>
                     <div class="w-33p fl-left pad-10">
@@ -205,7 +209,7 @@
                                     }
                                 ?>
                                 </select>
-                            </div>
+                            </div>    
                         </div>
                     </div>
                     <div class="w-33p fl-left pad-10">
@@ -225,7 +229,7 @@
                                     }
                                 ?>
                                 </select>
-                            </div>
+                            </div>    
                         </div>
                     </div>
                 </div>
