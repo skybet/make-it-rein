@@ -66,22 +66,8 @@
     }
 
   }
-
-
-
-
   print_r($winnerList);
-
   echo "<br><br>";
-
-
   print_r($looserList);
-
-
-
-
-
-
-
 
  ?>
