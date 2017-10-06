@@ -18,9 +18,13 @@ $races = [1,2,3];
    <body>
      <form class="" action="../logic/addResults.php" method="post">
       <?php
+        $round = $_POST['round'];
+
+        echo "<h3>Enter Round $round Results</h3>";
+
           foreach ($races as $race) {
               $hf = new HorseFactory($pdo);
-              $horses = $hf->getRaceHorses($race);
+              $horses = $hf->getRaceHorses($race, $round);
               echo "<h4>Race $race</h4>";
               for($x=1; $x<=3; $x++){
                 echo "<span>Position $x</span>";
