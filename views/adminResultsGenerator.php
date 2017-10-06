@@ -1,5 +1,12 @@
-<?php require __DIR__."/../init.php"; ?>
+<?php
 
+require '../init.php';
+include __DIR__.'/../db.php';
+$pdo = get_db();
+
+$races = [1,2,3];
+
+?>
 
  <!DOCTYPE html>
  <html>
@@ -21,21 +28,17 @@
       <h1>Admin Results Generator</h1>
      <form class="" action="../logic/addResults.php" method="post">
       <?php
+        $round = $_POST['round'];
 
-        $db = get_db();
-        $rfactory=new RoundFactory($db);
-        $raceFactory = new RaceFactory($db);
-        $hf = new HorseFactory($db);
+        echo "<h3>Enter Round $round Results</h3>";
 
-        $currentId = $rfactory->getCurrentRound();
-        $raceIds = $raceFactory->byRoundId($currentId);
-
-          foreach ($raceIds as $key=>$race) {
-              $horses = $hf->getRaceHorses($race->id, $currentId);
-              echo "<h3>Race ".$race->id."</h3>";
+          foreach ($races as $race) {
+              $hf = new HorseFactory($pdo);
+              $horses = $hf->getRaceHorses($race, $round);
+              echo "<h4>Race $race</h4>";
               for($x=1; $x<=3; $x++){
                 echo "<span>Position $x: </span>";
-                echo "<select class='cl-black' name='race".(($key)+1)."pos".$x."'>";
+                echo "<select class='cl-black' name='race".$race."pos".$x."'>";
                   foreach($horses as $horse){
                     echo "<option value='".$horse->linkId."'>$horse->horseName</option>";
                   }
