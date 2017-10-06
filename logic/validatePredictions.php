@@ -2,6 +2,7 @@
 
 function checkingUserEmail($email, $db)
 {
+    
     $userFactory = new UserFactory($db);
     $r = $userFactory->byEmail($email);
 
@@ -31,13 +32,13 @@ function checkUserRound($db, $predArray, $race1first, $userId)
     if ($q) {
         writeUserPrediction($predArray, $db);
 
-        $textForReturn = "prediction written to db";
+        //$textForReturn = "prediction written to db";
         header('Location: ../success.php');
-        return $textForReturn;
+        //return $textForReturn;
     } else {
-        $textForReturn = "You have already predicted on this round";
+        //$textForReturn = "You have already predicted on this round";
         header('Location: ../fail.php');
-        return $textForReturn;
+        //return $textForReturn;
     }
 };
 

@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
- <!-- Global Site Tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107586799-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-   gtag('config', 'UA-107586799-1');
-  </script>
-
- <?php
-
+<?php
+date_default_timezone_set('UTC');
  spl_autoload_register(function ($className) {
      require __DIR__.'//classes/'. $className .'.php';
  });
@@ -30,5 +16,3 @@
  }
 
  ?>
-</head>
-</html>

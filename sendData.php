@@ -32,14 +32,14 @@ tracker($userId);
 $text = checkUserRound($db, $predArray, $race1first, $userId);
 
 
-echo $text;
-echo "<br><br>";
+// echo $text;
+// echo "<br><br>";
 
 $uf = new UserFactory($db);
 
 $emailForUse = $uf->byEmail($userEmail);
 if (!isset($emailForUse)) {
-    echo "not in db";
+    //echo "not in db";
 } else {
     // print_r($emailForUse[0][0]);
     $userId = $emailForUse[0][0];
@@ -55,7 +55,7 @@ if (!isset($emailForUse)) {
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
     $response = $sg->client->mail()->send()->post($mail);
-    echo $response->statusCode();
+    //echo $response->statusCode();
     // print_r($response->headers());
     // echo $response->body();
 }
