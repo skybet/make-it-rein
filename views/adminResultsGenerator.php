@@ -1,4 +1,8 @@
-<?php require __DIR__."/../init.php"; ?>
+<?php require __DIR__."/../init.php";
+
+  $selectedRound = $_POST['round'];
+
+?>
 
 
  <!DOCTYPE html>
@@ -27,11 +31,11 @@
         $raceFactory = new RaceFactory($db);
         $hf = new HorseFactory($db);
 
-        $currentId = $rfactory->getCurrentRound();
-        $raceIds = $raceFactory->byRoundId($currentId);
+        //$currentId = $rfactory->getCurrentRound();
+        $raceIds = $raceFactory->byRoundId($selectedRound);
 
           foreach ($raceIds as $key=>$race) {
-              $horses = $hf->getRaceHorses($race->id, $currentId);
+              $horses = $hf->getRaceHorses($race->id, $selectedRound);
               echo "<h3>Race ".$race->id."</h3>";
               for($x=1; $x<=3; $x++){
                 echo "<span>Position $x: </span>";
