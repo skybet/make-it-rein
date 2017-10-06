@@ -50,21 +50,19 @@ class RoundFactory {
         return $row1;
     }
 
-
     public function getAllRounds(){
         $q = $this->db->query("
             select * from round;
         ");
 
        $result = $q->fetchAll();
-
        $rounds = [];
 
        foreach($result as $round){
-            $r = new Round($round[‘StartDate’], $round[‘EndDate’]);
+            $r = new Round($round['RoundId'],$round['StartDate'], $round['EndDate']);
             array_push($rounds, $r);
         }
-
+        //var_dump($rounds);
        return $rounds;
     }
 }

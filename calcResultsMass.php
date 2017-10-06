@@ -84,8 +84,33 @@
     }
 
   }
-  print_r($winnerList);
+
+  echo "winners:";
   echo "<br><br>";
-  print_r($looserList);
+  // print_r($winnerList);
+  $emailList = [];
+
+  foreach($winnerList as $i => $row)
+  {
+
+    $r = $db->prepare("
+      Select email from User where userId =:id;
+    ");
+
+    $r->execute(['id'=>$row]);
+    $e = $r->fetchAll();
+    array_push($emailList, $e[0][0]);
+    echo $e[0][0];
+    echo "<br><br>";
+
+  }
+
+  // print_r($emailList);
+
+
+
+
+  echo "<br><br>";
+  // print_r($looserList);
 
  ?>
