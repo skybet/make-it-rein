@@ -35,6 +35,7 @@
             <h2 class="txt-ctr txt-underline marb-0">
                 Race Day <?php echo $currentId ?>
             </h2>
+            <h4 class="txt-ctr marb-0">Make your prediction on the top 3 finishing horses for each race</h4>
             <form method="post" class="txt-ctr" action="sendData.php">
                 <div class="race1">
                     <h4 class="txt-left marb-0 mart-20"> RACE 1 - ASCOT 13:50</h4>

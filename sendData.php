@@ -43,20 +43,19 @@ if (!isset($emailForUse)) {
 } else {
     // print_r($emailForUse[0][0]);
     $userId = $emailForUse[0][0];
-    require 'sendgrid-php/vendor/autoload.php';
-
-    $from = new SendGrid\Email("Make it Rein", "Noreply@makeitrein.com");
-    $subject = "Your Bet Confirmation";
-    $to = new SendGrid\Email("Example User", "harrychaplain@hotmail.co.uk");
-    $content = new SendGrid\Content("text/html", "<h1> Your bet has been placed!</h1><h3> Good Luck!</h3>");
+    require 'vendor/autoload.php';
+    // If you are not using Composer
+// require("path/to/sendgrid-php/sendgrid-php.php");
+    $from = new SendGrid\Email("Example User", "noreply@makeitrein.com");
+    $subject = "Bet Confirmation";
+    $to = new SendGrid\Email("Example User", "$userEmail");
+    $content = new SendGrid\Content("text/html", " ");
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
-
-    $apiKey = $apiKey = getenv('SENDGRID_API_KEY');
-
+    $mail->setTemplateId("25f5b144-047a-46a8-a930-f152c2f6496d");
+    $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
-
     $response = $sg->client->mail()->send()->post($mail);
     echo $response->statusCode();
-    print_r($response->headers());
-    echo $response->body();
+    // print_r($response->headers());
+    // echo $response->body();
 }
