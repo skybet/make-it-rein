@@ -1,7 +1,7 @@
 <?php
 
 require '../init.php';
-include __DIR__.'/../db.php';
+
 $pdo = get_db();
 
 $races = [1,2,3];

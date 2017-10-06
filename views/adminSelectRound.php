@@ -1,6 +1,6 @@
 <?php
 require '../init.php';
-include __DIR__.'/../db.php';
+
 $pdo = get_db();
 
 ?>
