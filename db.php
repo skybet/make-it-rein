@@ -8,7 +8,6 @@ function get_db()
     $pass = 'mypass';
 
     $dsn = "mysql:host=$host; dbname=$db";
-
     $pdo = new PDO($dsn, $userdb, $pass);
     
     return $pdo;

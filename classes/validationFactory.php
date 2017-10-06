@@ -20,7 +20,7 @@
             JOIN Horse
                 ON HR.HorseId = Horse.HorseId
             WHERE
-                HR.HorseRaceLinkId = horseracelinkid;
+                HR.HorseRaceLinkId = :horseracelinkid;
             ");
 
             $q->execute([
@@ -51,14 +51,14 @@
             }
 
             if (empty($returnedRow)) {
-                echo "You have never bet";
+                //echo "You have never bet";
                 return true;
             } else {
                 if ($returnedRow[0][0] == $roundId[0][0]) {
-                    echo "you have already bet on this round";
+                    //echo "you have already bet on this round";
                     return false;
                 } else {
-                    echo "you have not bet on this round yet" ;
+                    //echo "you have not bet on this round yet" ;
                     return true;
                 }
             }

@@ -1,5 +1,5 @@
 <?php
-  include 'db.php';
+  // include 'db.php';
   include 'init.php';
   $db = get_db();
 
@@ -13,9 +13,12 @@
   $ids = $r->fetchAll();
 
   $winnerList = [];
+  $looserList = [];
 
   for($i=0;$i<count($ids);$i++)
   {
+
+    $flag=false;
     $r = $db->prepare("
         Select HorseRaceLinkId, Position from Prediction where UserId = :id ORDER BY HorseRaceLinkId;
     ");
@@ -25,9 +28,12 @@
     );
     $row = $r->fetchAll();
 
-    if(count($row)==0)
+    // echo $ids[$i][0];
+    // echo count($row);
+
+    if((int)count($row)==0)
     { 
-      break;
+      $flag=true;
     }
   
     $hr = $db->prepare("
@@ -47,18 +53,29 @@
     ]);
   
     $HRrow = $hr->fetchAll();
-  
-    if($HRrow === $row)
+
+    if($flag==false)
     {
-        array_push($winnerList, $ids[$i][0]);
-    }
-    else{
-      echo "no win";
+      if($HRrow === $row)
+      {
+          array_push($winnerList, $ids[$i][0]);
+      }
+      else{
+        array_push($looserList, $ids[$i][0]);
+      }
     }
 
   }
 
+
+
+
   print_r($winnerList);
+
+  echo "<br><br>";
+
+
+  print_r($looserList);
 
 
 

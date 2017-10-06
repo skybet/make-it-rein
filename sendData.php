@@ -1,7 +1,7 @@
 <?php
 
 include __DIR__.'/init.php';
-include __DIR__.'/db.php';
+//include __DIR__.'/db.php';
 include __DIR__.'/logic/validatePredictions.php';
 
 $db = get_db();
@@ -9,7 +9,7 @@ $db = get_db();
 $userEmail = $_POST['email'];
 $userId;
 $raceArray = [];
-echo $_POST['race1first'];
+
 array_push(
     $raceArray,
     $race1first = $_POST['race1first'],
@@ -27,21 +27,11 @@ $userId = checkingUserEmail($userEmail, $db);
 
 $predArray = createPredictionArray($raceArray, $userId); //called after userid is set
 
-checkUserRound($db, $predArray, $race1first, $userId);
+$text = checkUserRound($db, $predArray, $race1first, $userId);
 
-function writeUserPrediction($predArray, $db)
-{
-    $pf = new PredictionFactory($db);
+echo $text;
+echo "<br><br>";
 
-    $predArray = [];
-
-
-    foreach ($predArray as $row) {
-        $pf->save($row);
-        // print_r($row);
-        // echo PHP_EOL;
-    }
-}
 $uf = new UserFactory($db);
 
 $emailForUse = $uf->byEmail($userEmail);
@@ -67,19 +57,3 @@ if (!isset($emailForUse)) {
     print_r($response->headers());
     echo $response->body();
 }
-
-
-
-
-function createPredictionArray($raceArray, $userId)
-{
-    $predArray = [];
-
-    foreach ($raceArray as $i => $row) {
-        $i = ($i%3)+1;
-        // echo $i;
-        $pred = new Prediction($row, $userId, $i);
-        array_push($predArray, $pred);
-    };
-    return $predArray;
-};
