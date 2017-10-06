@@ -1,4 +1,4 @@
-var countDown = 30;
+var countDown = 20;
 
 setInterval(function() {
     if (countDown === 0) {
