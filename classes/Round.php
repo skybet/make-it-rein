@@ -6,7 +6,8 @@ class Round{
     public $startDate;
     public $endDate;
 
-    public function __construct($startDate, $endDate){
+    public function __construct($id, $startDate, $endDate){
+        $this->id = $id;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
     }

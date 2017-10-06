@@ -1,6 +1,6 @@
 <?php
- require '../init.php';
- include __DIR__.'/../db.php';
+ require __DIR__.'/../init.php';
+ // include __DIR__.'/../db.php';
  $pdo = get_db();
 ?>
 
@@ -18,6 +18,7 @@
       <?php
         $rf = new RoundFactory($pdo);
         $rounds = $rf->getAllRounds();
+        //echo $rounds;
         echo "<select name='round'>";
           foreach ($rounds as $round) {
             // $dt = new DateTime($round->startDate);
