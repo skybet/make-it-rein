@@ -20,7 +20,7 @@
       <form>
 
       <a href="/views/adminResultsGenerator.php" class="btn btn-success">Race Results Page</a> 
-      <a href="/views/adminRaceGenerator.php" class="btn btn-success">Race Generator Page</a> 
+      <!-- <a href="/views/adminRaceGenerator.php" class="btn btn-success">Race Generator Page</a>  -->
       <a href="/calcResultsMass.php" class="btn btn-success">Check Winners</a> 
         
       </form>              
