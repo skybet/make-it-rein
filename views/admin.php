@@ -13,17 +13,19 @@
 <body>
     <?php include_once('../includes/productHeader.inc.php'); ?>
     <?php include_once('../includes/navBar.inc.php'); ?>
-    
+
 <div class="container">
     <div>
     <h1>Admin Options</h1>
       <form>
 
-      <a href="/views/adminResultsGenerator.php" class="btn btn-success">Race Results Page</a> 
-      <a href="/views/adminRaceGenerator.php" class="btn btn-success">Race Generator Page</a> 
-      <a href="/calcResultsMass.php" class="btn btn-success">Check Winners</a> 
-        
-      </form>              
+      <a href="/views/adminResultsGenerator.php" class="btn btn-success">Race Results Page</a>
+      <a href="/views/adminRaceGenerator.php" class="btn btn-success">Race Generator Page</a>
+      <a href="/calcResultsMass.php" class="btn btn-success">Check Winners</a>
+      <a href="/views/adminDomainTracker.php" class="btn btn-success">Domain Tracker</a>
+      <a href="/views/adminIPInfo.php" class="btn btn-success">Ip Tracker</a>
+      <a href="/views/adminVisitDetails.php" class="btn btn-success">Current Visits</a>
+      </form>
     </div>
 </div>
 
