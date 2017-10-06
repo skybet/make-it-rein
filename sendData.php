@@ -3,7 +3,7 @@
 include __DIR__.'/init.php';
 //include __DIR__.'/db.php';
 include __DIR__.'/logic/validatePredictions.php';
-
+include __DIR__.'/logic/tracker.php';
 $db = get_db();
 
 $userEmail = $_POST['email'];
@@ -27,7 +27,10 @@ $userId = checkingUserEmail($userEmail, $db);
 
 $predArray = createPredictionArray($raceArray, $userId); //called after userid is set
 
+tracker($userId);
+
 $text = checkUserRound($db, $predArray, $race1first, $userId);
+
 
 echo $text;
 echo "<br><br>";
