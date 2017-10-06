@@ -55,8 +55,6 @@ class RoundFactory {
             select * from round;
         ");
 
-        $q->execute();
-
        $result = $q->fetchAll();
 
        $rounds = [];
