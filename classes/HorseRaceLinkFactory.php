@@ -7,7 +7,7 @@ class HorseRaceLinkFactory{
     }
 
     public function getLink($linkId){
-      echo $linkId;
+    //   echo $linkId;
         $stmt = $this->db->prepare("
             select *
             from HorseRaceLink
@@ -58,11 +58,11 @@ class HorseRaceLinkFactory{
             'result' => $link->result,
             'linkid' => $link->id
         ]);
-        if($result){
-          echo "<p>Hit</p>";
-        } else {
-          echo "<p>Broke</p>";
-        }
+        // if($result){
+        //   echo "<p>Hit</p>";
+        // } else {
+        //   echo "<p>Broke</p>";
+        // }
     }
 
 }

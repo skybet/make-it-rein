@@ -50,6 +50,7 @@ class RoundFactory {
         return $row1;
     }
 
+
     public function getAllRounds(){
         $q = $this->db->query("
             select * from round;
@@ -66,7 +67,6 @@ class RoundFactory {
 
        return $rounds;
     }
-
 }
 
 

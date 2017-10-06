@@ -1,8 +1,7 @@
 <?php
-require '../init.php';
-
-$pdo = get_db();
-
+ require '../init.php';
+ include __DIR__.'/../db.php';
+ $pdo = get_db();
 ?>
 
 
