@@ -8,18 +8,66 @@ class RoundFactory {
         $this->db = $db;
     }
 
-    public function getAllRounds(){
-      $rounds = [];
+    //get round from time of date
+    //DATETIME - format: YYYY-MM-DD HH:MI:SS.
+    public function getCurrentRound(){
+      $s = $this->db->prepare("
+      select RoundId from Round where StartDate <= NOW()
+      and EndDate >= NOW()
+      ");
 
-      $q = $this->db->query("SELECT * FROM Round");
-      foreach ($q as $index => $round) {
+      $s->execute(
 
-        $r = new Round($round["RoundId"],$round["StartDate"],$round["EndDate"]);
-        array_push($rounds,$r);
+      );
+
+      $row = $s->fetchAll();
+
+
+
+
+    $currentRound = $row[0][0];
+
+      // echo "The trial round from factory: " .$trialRound;
+
+      //var_dump($row[0]);
+      return $currentRound;
+    //  return($);
+    }
+
+
+
+    public function getStartDate($currentRound){
+      $s = $this->db->prepare("
+      select StartDate from Round where RoundId=:roundID
+      ");
+
+      $s->execute(['roundID' => $currentRound]);
+      $row = $s->fetchAll();
+      if (!$row){
+          return null;
       }
-      return $rounds;
+      $row1 = $row[0][0];
+        return $row1;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+    //insert into db the current date and wait for
+    // certain amount of time. Then insert in new object
+
+
+
+
 
 ?>
