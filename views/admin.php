@@ -19,6 +19,7 @@
     <h1>Admin Options</h1>
       <form>
 
+
       <a href="/views/adminResultsGenerator.php" class="btn btn-success">Race Results Page</a>
       <!-- <a href="/views/adminRaceGenerator.php" class="btn btn-success">Race Generator Page</a> -->
       <a href="/calcResultsMass.php" class="btn btn-success">Check Winners</a>
@@ -28,7 +29,7 @@
       </form>
     </div>
 </div>
-
+<br><br><br><br><br><br><br>
 <?php include_once('../includes/footer.inc.php'); ?>
 </body>
 <script src="<?php echo '../js/jquery-3.2.1.min.js'?>"> </script>
