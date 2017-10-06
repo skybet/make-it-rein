@@ -5,7 +5,7 @@ spl_autoload_register(function ($className){
 
 
 
-function getDB(){
+function get_db(){
   $host ='127.0.0.1';
   $db = 'MakeItRein';
   $userdb = 'user1';

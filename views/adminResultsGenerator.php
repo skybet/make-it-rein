@@ -34,13 +34,8 @@ $races = [1,2,3];
 
           foreach ($races as $race) {
               $hf = new HorseFactory($pdo);
-<<<<<<< HEAD
               $horses = $hf->getRaceHorses($race, $round);
               echo "<h4>Race $race</h4>";
-=======
-              $horses = $hf->getRaceHorses($race, 5);
-              echo "<h3>Race $race</h3>";
->>>>>>> 1e15d9fece4b81c21ebc097caed5c3389d131c49
               for($x=1; $x<=3; $x++){
                 echo "<span>Position $x: </span>";
                 echo "<select class='cl-black' name='race".$race."pos".$x."'>";
